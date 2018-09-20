@@ -17,7 +17,7 @@ export default class DialogForm extends Component {
     constructor(props) {
         super(props);
 
-        this._handelRegister = this._handelRegister.bind(this);
+        this._handelSubmit = this._handelSubmit.bind(this);
         this._getFields = this._getFields.bind(this);
         this._getFormItem = this._getFormItem.bind(this);
     }
@@ -26,9 +26,10 @@ export default class DialogForm extends Component {
         this.props.getCommonSelect && this.props.getCommonSelect();
     }
 
-    _handelRegister(e,item) {
+    _handelSubmit(e,item) {
         e.preventDefault();
-        if(item.type!='primary'){
+        //不需要校验表单的直接执行
+        if(item.actionType!='submit'){
             item.clickHandle();
             return
         }
@@ -168,7 +169,7 @@ export default class DialogForm extends Component {
                         <Form
                             layout={'inline'}
                             className={"new-form"}
-                            onSubmit={this.props.actionButtons&&this.props.actionButtons.length?null:this._handelRegister}
+                            onSubmit={this.props.actionButtons&&this.props.actionButtons.length?null:this._handelSubmit}
                         >
                             {/*此处动态生成表单域*/}
                             {this._getFields()}
@@ -176,7 +177,7 @@ export default class DialogForm extends Component {
                         <div className="dialog-button" style={{textAlign:'center'}}>
                             {dialogButton &&
                             dialogButton.map((item, i) => {
-                                return <Button type={item.type} key={i} className="btn" onClick={(e)=>{this._handelRegister(e,item)}}>{item.text}</Button>;
+                                return <Button type={item.type} key={i} className="btn" onClick={(e)=>{this._handelSubmit(e,item)}}>{item.text}</Button>;
                             })
                             }
                         </div>

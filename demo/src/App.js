@@ -67,6 +67,7 @@ class App extends Component {
             dialogHeight:550,
             dialogButton:[{
                 text: '取消',
+                actionType:'cancel',
                 clickHandle: () => {
                         console.log('close')
                     }
@@ -74,6 +75,7 @@ class App extends Component {
                 {
                     text: '确认',
                     type: 'primary',
+                    actionType:'submit',
                     clickHandle: (values) => {
                         console.log(values)
                     }
