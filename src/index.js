@@ -55,9 +55,23 @@ export default class DialogForm extends Component {
                         if (data.type === 'rangedatepicker'){
                             let arry = [];
                             values[data.id]&&values[data.id].forEach((ele,index)=>{
-                                arry.push(Util.msToDate(new Date(ele)).withoutTime);
+                                if(data.showTime){
+                                    arry.push(Util.msToDate(new Date(ele)).hasTime);
+                                } else {
+                                    arry.push(Util.msToDate(new Date(ele)).withoutTime);
+                                }
+
                             })
                             values[data.id] = arry
+                        }
+                        if (data.type === 'datepicker'){
+                                let time = ''
+                                if(data.showTime){
+                                    time=(Util.msToDate(new Date(values[data.id])).hasTime);
+                                } else {
+                                    time=(Util.msToDate(new Date(values[data.id])).withoutTime);
+                                }
+                            values[data.id] = time
                         }
                     });
                 }

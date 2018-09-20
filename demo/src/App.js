@@ -58,7 +58,7 @@ class App extends Component {
             },
                 {
                 id: 'timePick',
-                type:'testTimePick',
+                type:'datepicker',
                 name:'时间点',
                 showTime:false
             }
