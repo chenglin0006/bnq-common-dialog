@@ -123,7 +123,7 @@ var DialogForm = function (_Component) {
 
         var _this = _possibleConstructorReturn(this, (DialogForm.__proto__ || Object.getPrototypeOf(DialogForm)).call(this, props));
 
-        _this._handelRegister = _this._handelRegister.bind(_this);
+        _this._handelSubmit = _this._handelSubmit.bind(_this);
         _this._getFields = _this._getFields.bind(_this);
         _this._getFormItem = _this._getFormItem.bind(_this);
         return _this;
@@ -135,12 +135,13 @@ var DialogForm = function (_Component) {
             this.props.getCommonSelect && this.props.getCommonSelect();
         }
     }, {
-        key: '_handelRegister',
-        value: function _handelRegister(e, item) {
+        key: '_handelSubmit',
+        value: function _handelSubmit(e, item) {
             var _this2 = this;
 
             e.preventDefault();
-            if (item.type != 'primary') {
+            //不需要校验表单的直接执行
+            if (item.actionType != 'submit') {
                 item.clickHandle();
                 return;
             }
@@ -340,7 +341,7 @@ var DialogForm = function (_Component) {
                             {
                                 layout: 'inline',
                                 className: "new-form",
-                                onSubmit: this.props.actionButtons && this.props.actionButtons.length ? null : this._handelRegister
+                                onSubmit: this.props.actionButtons && this.props.actionButtons.length ? null : this._handelSubmit
                             },
                             this._getFields()
                         ),
@@ -351,7 +352,7 @@ var DialogForm = function (_Component) {
                                 return _react2.default.createElement(
                                     _antd.Button,
                                     { type: item.type, key: i, className: 'btn', onClick: function onClick(e) {
-                                            _this3._handelRegister(e, item);
+                                            _this3._handelSubmit(e, item);
                                         } },
                                     item.text
                                 );
