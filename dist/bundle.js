@@ -268,6 +268,25 @@ var DialogForm = function (_Component) {
                         option.initialValue
                     );
                     break;
+                case 'treeSelect':
+                    var _option$showSearch = option.showSearch,
+                        showSearch = _option$showSearch === undefined ? false : _option$showSearch,
+                        _option$allowClear = option.allowClear,
+                        allowClear = _option$allowClear === undefined ? true : _option$allowClear,
+                        treeData = option.treeData,
+                        placeholder = option.placeholder,
+                        _option$multiple = option.multiple,
+                        multiple = _option$multiple === undefined ? false : _option$multiple;
+
+                    var props = {
+                        showSearch: showSearch,
+                        allowClear: allowClear,
+                        treeData: treeData,
+                        placeholder: placeholder,
+                        multiple: multiple
+                    };
+                    return _react2.default.createElement(_antd.TreeSelect, props);
+                    break;
                 default:
                     return _react2.default.createElement(_antd.Input, { disabled: option.disabled, maxLength: option.maxlength, placeholder: option.placeholder,
                         type: option.type == 'password' ? 'password' : '' });

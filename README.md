@@ -30,7 +30,17 @@ DialogForm.propTypes = {
         type:'rangedatepicker',
         name:'选择时间',
         showTime:true
-    }],
+    },{                             //树形选择器
+          id:'treeSelect',
+          type:'treeSelect',
+          treeData:treeData,//treeData参考demo里面的数据结构
+          showSearch:false,
+          allowClear:true,
+          name:'树形选择器',
+          placeholder:'请选择',
+          initialValue:'0-0-2',
+          multiple:true
+      }],
     dialogWidth:500,
     dialogHeight:550,
     dialogButton:[{

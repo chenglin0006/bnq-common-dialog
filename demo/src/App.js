@@ -16,6 +16,24 @@ class App extends Component {
         console.log('123123');
     }
   render() {
+      const treeData = [{
+          title: 'Node1',
+          value: '0-0',
+          key: '0-0',
+          children: [{
+              title: 'Child Node1',
+              value: '0-0-1',
+              key: '0-0-1',
+          }, {
+              title: 'Child Node2',
+              value: '0-0-2',
+              key: '0-0-2',
+          }],
+      }, {
+          title: 'Node2',
+          value: '0-1',
+          key: '0-1',
+      }];
         const props={
             title:'弹窗标题',
             formData:[
@@ -61,6 +79,16 @@ class App extends Component {
                 type:'datepicker',
                 name:'时间点',
                 showTime:false
+            }, {
+                id:'treeSelect',
+                type:'treeSelect',
+                treeData:treeData,
+                showSearch:false,
+                allowClear:true,
+                    name:'树形选择器',
+                    placeholder:'请选择',
+                    initialValue:'0-0-2',
+                    multiple:true
             }
             ],
             dialogWidth:600,

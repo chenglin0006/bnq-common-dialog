@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio} from 'antd';
+import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio,TreeSelect} from 'antd';
 import PropTypes from 'prop-types';
 import './index.less';
 import * as Util from "./util";
@@ -126,6 +126,17 @@ export default class DialogForm extends Component {
                 break;
             case 'label' :
                 return <label>{option.initialValue}</label>
+                break;
+            case 'treeSelect':
+                const {showSearch=false,allowClear=true,treeData,placeholder,multiple=false}=option
+                let props = {
+                    showSearch:showSearch,
+                    allowClear:allowClear,
+                    treeData:treeData,
+                    placeholder:placeholder,
+                    multiple:multiple
+                }
+                return <TreeSelect {...props}></TreeSelect>
                 break;
             default:
                 return <Input disabled={option.disabled} maxLength={option.maxlength} placeholder={option.placeholder}
