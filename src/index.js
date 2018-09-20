@@ -3,6 +3,7 @@ import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, 
 import PropTypes from 'prop-types';
 import './index.less';
 import * as Util from "./util";
+import locale from 'antd/lib/date-picker/locale/zh_CN';
 
 const FormItem = Form.Item;
 const RangePicker = DatePicker.RangePicker;
@@ -75,14 +76,18 @@ export default class DialogForm extends Component {
                 );
                 break;
             case 'datepicker':
-                return <DatePicker showTime disabled={option.disabled} format="YYYY-MM-DD HH:mm:ss"/>;
+                let dateFormatPick = 'YYYY-MM-DD';
+                if(option.showTime){
+                    dateFormatPick = 'YYYY-MM-DD HH:mm:ss';
+                }
+                return <DatePicker locale={locale} disabled={option.disabled} showTime={option.showTime?true:false} format={dateFormatPick}/>;
                 break;
             case 'rangedatepicker':
                 let dateFormat = 'YYYY-MM-DD';
                 if(option.showTime){
                     dateFormat = 'YYYY-MM-DD HH:mm:ss';
                 }
-                return <RangePicker disabled={option.disabled} showTime={option.showTime?true:false} format={dateFormat}/>
+                return <RangePicker locale={locale} disabled={option.disabled} showTime={option.showTime?true:false} format={dateFormat}/>
                 break;
             case 'switch':
                 return <Switch disabled={option.disabled} checkedChildren="是" unCheckedChildren="否"/>;
@@ -176,6 +181,10 @@ export default class DialogForm extends Component {
 }
 
 DialogForm.propTypes = {
-    formData: PropTypes.arrayOf(PropTypes.object)
+    formData: PropTypes.arrayOf(PropTypes.object), //表格元素
+    title:PropTypes.string,
+    dialogWidth:PropTypes.number,
+    dialogHeight:PropTypes.number,
+    dialogButton:PropTypes.arrayOf(PropTypes.object)//按钮方法
 }
 

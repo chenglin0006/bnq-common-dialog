@@ -19,31 +19,43 @@ class App extends Component {
         const props={
             title:'弹窗标题',
             formData:[{
+                id: 'inputId',
+                name:'testInput'
+            },
+                {
                 id: 'verifyResult',
                 type:'radio',
-                name:'审核结果',
+                name:'testRadio',
                 data:[{name:'通过',id:2},{name:'拒绝',id:3}],
                 initialValue:2,
                 isRequired:true
             },{
                 id: 'remark',
                 type:'textarea',
-                name:'原因描述'
+                name:'testTexearea'
             },{
                 id: 'closeReason',
                 type:'select',
                 data:[{name:'原因1',id:2},{name:'原因2',id:3}],
-                name:'关闭原因',
+                name:'testSelect',
                 initialValue:3,
                 isRequired:true,
                 isHidePleaseSelect:true
-            },{
+            },
+                {
                 id: 'time',
                 type:'rangedatepicker',
-                name:'选择时间',
+                name:'Rangedate',
                 showTime:true
-            }],
-            dialogWidth:500,
+            },
+                {
+                id: 'timePick',
+                type:'testTimePick',
+                name:'时间点',
+                showTime:false
+            }
+            ],
+            dialogWidth:600,
             dialogHeight:550,
             dialogButton:[{
                 text: '取消',
