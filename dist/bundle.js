@@ -305,7 +305,7 @@ var DialogForm = function (_Component) {
                         initialValue: option.initialValue
                     } : {
                         rules: [{
-                            required: option.isRequired, message: '不能为空！'
+                            required: option.isRequired, message: '不能为空！', whitespace: true
                         }],
                         initialValue: option.initialValue
                     };
