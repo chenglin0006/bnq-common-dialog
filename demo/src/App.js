@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import {Form} from 'antd'
 import CommonComponent from '../../src/index'
+import moment from 'moment'
 
 const WrappedAdvancedNew=Form.create()(CommonComponent);
 
@@ -78,7 +79,8 @@ class App extends Component {
                 id: 'timePick',
                 type:'datepicker',
                 name:'时间点',
-                showTime:false
+                showTime:false,
+                initialValue:moment('2018-09-20','YYYY-MM-DD'),
             }, {
                 id:'treeSelect',
                 type:'treeSelect',

@@ -29,6 +29,7 @@ DialogForm.propTypes = {
         id: 'time',                 //rangedatepicker
         type:'rangedatepicker',
         name:'选择时间',
+        initialValue:moment('2018-09-20','YYYY-MM-DD'),
         showTime:true
     },{                             //树形选择器
           id:'treeSelect',
