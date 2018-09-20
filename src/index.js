@@ -154,17 +154,26 @@ export default class DialogForm extends Component {
                     initialValue: option.initialValue
                 } : {
                     rules: [{
+                        required: option.isRequired, message: '不能为空！'
+                    }],
+                    initialValue: option.initialValue
+                }
+
+                //输入框为空格时判错
+                let inputRules = {
+                    rules: [{
                         required: option.isRequired, message: '不能为空！', whitespace: true
                     }],
                     initialValue: option.initialValue
                 }
 
                 return (
-                    <FormItem label={option.name} className={(option.isHide?'hide':'')  +(option.notNull?' not-null':'') + ' '+option.className} key={i}>
-                        {getFieldDecorator(`${option.id}`, decoratorRules
+                    <FormItem label={option.name} className={(option.desc?'has-desc ':'')+(option.isHide?'hide':'') +(option.notNull?' not-null':'') +' '+option.className} key={i}>
+                        {getFieldDecorator(`${option.id}`, option.type?decoratorRules:inputRules
                         )(
                             that._getFormItem(option)
                         )}
+                        {option.desc?<div className={'desc-dev'}>{option.desc}</div>:''}
                     </FormItem>
                 );
             }

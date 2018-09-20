@@ -305,6 +305,13 @@ var DialogForm = function (_Component) {
                         initialValue: option.initialValue
                     } : {
                         rules: [{
+                            required: option.isRequired, message: '不能为空！'
+                        }],
+                        initialValue: option.initialValue
+
+                        //输入框为空格时判错
+                    };var inputRules = {
+                        rules: [{
                             required: option.isRequired, message: '不能为空！', whitespace: true
                         }],
                         initialValue: option.initialValue
@@ -312,8 +319,13 @@ var DialogForm = function (_Component) {
 
                     return _react2.default.createElement(
                         FormItem,
-                        { label: option.name, className: (option.isHide ? 'hide' : '') + (option.notNull ? ' not-null' : '') + ' ' + option.className, key: i },
-                        getFieldDecorator('' + option.id, decoratorRules)(that._getFormItem(option))
+                        { label: option.name, className: (option.desc ? 'has-desc ' : '') + (option.isHide ? 'hide' : '') + (option.notNull ? ' not-null' : '') + ' ' + option.className, key: i },
+                        getFieldDecorator('' + option.id, option.type ? decoratorRules : inputRules)(that._getFormItem(option)),
+                        option.desc ? _react2.default.createElement(
+                            'div',
+                            { className: 'desc-dev' },
+                            option.desc
+                        ) : ''
                     );
                 }
             });
