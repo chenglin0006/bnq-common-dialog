@@ -126,7 +126,14 @@ export default class DialogForm extends Component {
                 return (
                     <div key={i} style={{display: 'none'}}></div>
                 );
-            } else {
+            } else if(option.type=='detail'){
+                return (
+                    <div key={i} className={option.className}>
+                        {option.name?<span>{option.name}:</span>:''}
+                        <span>{option.value}</span>
+                        </div>
+                );
+            }else {
                 let decoratorRules = option.type === 'switch' ? {
                     valuePropName: 'checked',
                     initialValue: option.initialValue

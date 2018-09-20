@@ -18,7 +18,15 @@ class App extends Component {
   render() {
         const props={
             title:'弹窗标题',
-            formData:[{
+            formData:[
+                {
+                    id: 'detailId',
+                    name:'详情',
+                    value:'详情显示',
+                    type:'detail',
+                    className:'detail-style'
+                },
+                {
                 id: 'inputId',
                 name:'testInput'
             },
