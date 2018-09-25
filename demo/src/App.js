@@ -47,7 +47,8 @@ class App extends Component {
                 },
                 {
                 id: 'inputId',
-                name:'testInput'
+                name:'testInput',
+                    isRequired:true
             },
                 {
                 id: 'verifyResult',

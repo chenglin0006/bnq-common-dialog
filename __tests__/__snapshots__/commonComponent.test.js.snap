@@ -1,13 +1,236 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`filter 1`] = `
-<button
-  className="ant-btn test"
-  onClick={[Function]}
-  type="button"
+exports[`dialog 1`] = `
+<div
+  className="dialog-mask"
 >
-  <span>
-    test
-  </span>
-</button>
+  <div
+    className="dialog-container"
+    style={
+      Object {
+        "height": "300px",
+        "width": "500px",
+      }
+    }
+  >
+    <div
+      className="dialog-title"
+    >
+      <span>
+        title
+      </span>
+    </div>
+    <div
+      className="form-content-div"
+      style={
+        Object {
+          "height": "NaNpx",
+          "overflow": "scroll",
+        }
+      }
+    >
+      <form
+        className="ant-form ant-form-inline new-form"
+        onSubmit={[Function]}
+      >
+        <div
+          className="detail-style"
+        >
+          <span>
+            详情
+            :
+          </span>
+          <span>
+            详情显示
+          </span>
+        </div>
+        <div
+          className="ant-row ant-form-item  undefined"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="inputId"
+              onClick={[Function]}
+              title="testInput"
+            >
+              testInput
+            </label>
+          </div>
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <input
+                  className="ant-input"
+                  data-__field={
+                    Object {
+                      "name": "inputId",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": undefined,
+                      "name": "inputId",
+                      "originalProps": Object {
+                        "disabled": false,
+                        "maxLength": undefined,
+                        "placeholder": undefined,
+                        "prefixCls": "ant-input",
+                        "type": "",
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "不能为空！",
+                          "required": true,
+                          "whitespace": true,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "不能为空！",
+                              "required": true,
+                              "whitespace": true,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  disabled={false}
+                  id="inputId"
+                  onChange={[Function]}
+                  onKeyDown={[Function]}
+                  type=""
+                  value=""
+                />
+                
+              </span>
+            </div>
+          </div>
+        </div>
+        <div
+          className="ant-row ant-form-item  undefined"
+        >
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className="ant-form-item-required"
+              htmlFor="closeReason"
+              onClick={[Function]}
+              title="testSelect"
+            >
+              testSelect
+            </label>
+          </div>
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control has-success"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <div
+                  className="select ant-select ant-select-enabled"
+                  onBlur={[Function]}
+                  onClick={[Function]}
+                  onFocus={[Function]}
+                  onMouseDown={[Function]}
+                  onTouchStart={[Function]}
+                >
+                  <div
+                    aria-autocomplete="list"
+                    aria-expanded={false}
+                    aria-haspopup="true"
+                    className="ant-select-selection
+            ant-select-selection--single"
+                    onKeyDown={[Function]}
+                    role="combobox"
+                    tabIndex={0}
+                  >
+                    <div
+                      className="ant-select-selection__rendered"
+                    >
+                      <div
+                        className="ant-select-selection-selected-value"
+                        style={
+                          Object {
+                            "display": "block",
+                            "opacity": 1,
+                          }
+                        }
+                        title="原因2"
+                      >
+                        原因2
+                      </div>
+                    </div>
+                    <span
+                      className="ant-select-arrow"
+                      onClick={[Function]}
+                      style={
+                        Object {
+                          "WebkitUserSelect": "none",
+                          "userSelect": "none",
+                        }
+                      }
+                      unselectable="on"
+                    >
+                      <b />
+                    </span>
+                  </div>
+                </div>
+                
+              </span>
+            </div>
+          </div>
+        </div>
+      </form>
+      <div
+        className="dialog-button"
+        style={
+          Object {
+            "textAlign": "center",
+          }
+        }
+      >
+        <button
+          className="ant-btn btn"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            取 消
+          </span>
+        </button>
+        <button
+          className="ant-btn btn ant-btn-primary"
+          onClick={[Function]}
+          type="button"
+        >
+          <span>
+            确 认
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
 `;
