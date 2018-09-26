@@ -41,7 +41,7 @@ class App extends Component {
                 {
                     id: 'detailId',
                     name:'详情',
-                    value:'详情显示',
+                    initialValue:'详情显示',
                     type:'detail',
                     className:'detail-style'
                 },
@@ -94,7 +94,7 @@ class App extends Component {
                     multiple:true
             }
             ],
-            dialogWidth:600,
+            dialogWidth:700,
             dialogHeight:550,
             dialogButton:[{
                 text: '取消',

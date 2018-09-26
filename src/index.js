@@ -124,7 +124,7 @@ export default class DialogForm extends Component {
                     {option.data && option.data.map((item,key) => <Radio key={key} value={item.id}>{item.name}</Radio>)}
                 </RadioGroup>
                 break;
-            case 'label' :
+            case 'detail' :
                 return <label>{option.initialValue}</label>
                 break;
             case 'treeSelect':
@@ -151,13 +151,6 @@ export default class DialogForm extends Component {
             if (option.isHide === 'true') {//隐藏的条目
                 return (
                     <div key={i} style={{display: 'none'}}></div>
-                );
-            } else if(option.type=='detail'){
-                return (
-                    <div key={i} className={option.className}>
-                        {option.name?<span>{option.name}:</span>:''}
-                        <span>{option.value}</span>
-                        </div>
                 );
             }else {
                 let decoratorRules = option.type === 'switch' ? {

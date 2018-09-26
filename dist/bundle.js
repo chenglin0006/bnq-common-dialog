@@ -261,7 +261,7 @@ var DialogForm = function (_Component) {
                         })
                     );
                     break;
-                case 'label':
+                case 'detail':
                     return _react2.default.createElement(
                         'label',
                         null,
@@ -302,22 +302,6 @@ var DialogForm = function (_Component) {
                 if (option.isHide === 'true') {
                     //隐藏的条目
                     return _react2.default.createElement('div', { key: i, style: { display: 'none' } });
-                } else if (option.type == 'detail') {
-                    return _react2.default.createElement(
-                        'div',
-                        { key: i, className: option.className },
-                        option.name ? _react2.default.createElement(
-                            'span',
-                            null,
-                            option.name,
-                            ':'
-                        ) : '',
-                        _react2.default.createElement(
-                            'span',
-                            null,
-                            option.value
-                        )
-                    );
                 } else {
                     var decoratorRules = option.type === 'switch' ? {
                         valuePropName: 'checked',
