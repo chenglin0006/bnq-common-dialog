@@ -323,7 +323,7 @@ var DialogForm = function (_Component) {
                     return _react2.default.createElement(
                         FormItem,
                         { label: option.name, className: (option.desc ? 'has-desc ' : '') + (option.isHide ? 'hide' : '') + (option.notNull ? ' not-null' : '') + ' ' + option.className, key: i },
-                        getFieldDecorator('' + option.id, option.type ? decoratorRules : inputRules)(that._getFormItem(option)),
+                        getFieldDecorator('' + option.id, option.type == 'input' || !option.type ? inputRules : decoratorRules)(that._getFormItem(option)),
                         option.desc ? _react2.default.createElement(
                             'div',
                             { className: 'desc-dev' },

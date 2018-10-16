@@ -173,7 +173,7 @@ export default class DialogForm extends Component {
 
                 return (
                     <FormItem label={option.name} className={(option.desc?'has-desc ':'')+(option.isHide?'hide':'') +(option.notNull?' not-null':'') +' '+option.className} key={i}>
-                        {getFieldDecorator(`${option.id}`, option.type?decoratorRules:inputRules
+                        {getFieldDecorator(`${option.id}`, (option.type=='input' || !option.type)?inputRules:decoratorRules
                         )(
                             that._getFormItem(option)
                         )}
