@@ -33,7 +33,7 @@ export default class DialogForm extends Component {
             item.clickHandle();
             return
         }
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFieldsAndScroll((err, values) => {
             //redux调接口
             if (!err) {
                 //如果有CheckBox类型的，将true改成1，undefined改为0
