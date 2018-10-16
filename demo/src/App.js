@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Form} from 'antd'
+import {Form,Button} from 'antd'
 import CommonComponent from '../../src/index'
 import moment from 'moment'
 
@@ -11,6 +11,9 @@ class App extends Component {
     constructor(props) {
         super(props);
         this.testClick = this.testClick.bind(this);
+        this.state={
+            showDialogStatus:false
+        }
 
     }
     testClick(){
@@ -110,7 +113,10 @@ class App extends Component {
                 text: '取消',
                 actionType:'cancel',
                 clickHandle: () => {
-                        console.log('close')
+                        console.log('close');
+                        this.setState({
+                            showDialogStatus:false
+                        })
                     }
                 },
                 {
@@ -118,7 +124,10 @@ class App extends Component {
                     type: 'primary',
                     actionType:'submit',
                     clickHandle: (values) => {
-                        console.log(values)
+                        console.log(values);
+                        this.setState({
+                            showDialogStatus:false
+                        })
                     }
                 }]
         }
@@ -131,7 +140,14 @@ class App extends Component {
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
-          <WrappedAdvancedNew {...props}></WrappedAdvancedNew>
+          <Button onClick={()=>{
+              this.setState({
+                  showDialogStatus: true
+              })
+          }}>打开弹窗</Button>
+          {this.state.showDialogStatus?<div>
+              <WrappedAdvancedNew {...props}></WrappedAdvancedNew>
+          </div>:''}
       </div>
     );
   }
