@@ -187,7 +187,7 @@ export default class DialogForm extends Component {
     render() {
         let {dialogButton,message,showInputSelect, dialogWidth, dialogHeight,title} = this.props;
         return (
-            <div className="dialog-mask">
+            <div className="dialog-mask bnq-common-dialog-container">
                 <div className="dialog-container" style={{width: (dialogWidth||500)+'px', height: (dialogHeight||300)+'px'}}>
                     <div className="dialog-title">
                         <span>{title||'操作提示'}</span>

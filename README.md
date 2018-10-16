@@ -1,9 +1,9 @@
 ## Install
+npm i bnq-common-dialog
 
-```
-npm i react-component-bnq
-```
 
+## use 见demo
+支持：detail/radio/textarea/select/number/rangedatepicker/treeSelect
 DialogForm.propTypes = {
     title:'弹窗标题',
     formData:[{
@@ -26,6 +26,14 @@ DialogForm.propTypes = {
         isRequired:true,
         isHidePleaseSelect:true
     },{
+          id: 'subscriptionAmount', //number
+          name: '金额',
+          type: 'number',
+          min:0,
+          max:1000000,
+          formatter:(value) => `${value}元`,
+          parse:value => value.replace(/[^\d.]/g,"").replace(/^\./g,"").replace(/\.{2,}/g,".").replace(".","$#$").replace(/\./g,"").replace("$#$",".").replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'),
+      },{
         id: 'time',                 //rangedatepicker
         type:'rangedatepicker',
         name:'选择时间',
@@ -58,4 +66,17 @@ DialogForm.propTypes = {
             }
         }]
 }
+
+##test
+npm run test
+
+##demo
+cd demo
+npm start
+
+##build
+npm run bulid
+
+##publish
+npm publish
 

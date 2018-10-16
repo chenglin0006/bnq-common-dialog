@@ -77,6 +77,16 @@ class App extends Component {
                 showTime:true
             },
                 {
+                    id: 'subscriptionAmount',
+                    name: '金额',
+                    type: 'number',
+                    min:0,
+                    max:1000000,
+                    formatter:(value) => `${value}元`,
+                    desc:'test desc',
+                    parse:value => value.replace(/[^\d.]/g,"").replace(/^\./g,"").replace(/\.{2,}/g,".").replace(".","$#$").replace(/\./g,"").replace("$#$",".").replace(/^(\-)*(\d+)\.(\d\d).*$/,'$1$2.$3'),
+                },
+                {
                 id: 'timePick',
                 type:'datepicker',
                 name:'时间点',
