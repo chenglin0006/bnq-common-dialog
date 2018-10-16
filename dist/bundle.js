@@ -145,7 +145,7 @@ var DialogForm = function (_Component) {
                 item.clickHandle();
                 return;
             }
-            this.props.form.validateFieldsAndScroll(function (err, values) {
+            this.props.form.validateFields(function (err, values) {
                 //redux调接口
                 if (!err) {
                     //如果有CheckBox类型的，将true改成1，undefined改为0

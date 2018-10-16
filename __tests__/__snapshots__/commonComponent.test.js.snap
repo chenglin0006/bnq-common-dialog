@@ -2,7 +2,7 @@
 
 exports[`dialog 1`] = `
 <div
-  className="dialog-mask"
+  className="dialog-mask bnq-common-dialog-container"
 >
   <div
     className="dialog-container"
@@ -34,15 +34,73 @@ exports[`dialog 1`] = `
         onSubmit={[Function]}
       >
         <div
-          className="detail-style"
+          className="ant-row ant-form-item  detail-style"
         >
-          <span>
-            详情
-            :
-          </span>
-          <span>
-            详情显示
-          </span>
+          <div
+            className="ant-form-item-label"
+          >
+            <label
+              className=""
+              htmlFor="detailId"
+              onClick={[Function]}
+              title="详情"
+            >
+              详情
+            </label>
+          </div>
+          <div
+            className="ant-form-item-control-wrapper"
+          >
+            <div
+              className="ant-form-item-control"
+            >
+              <span
+                className="ant-form-item-children"
+              >
+                <label
+                  data-__field={
+                    Object {
+                      "name": "detailId",
+                    }
+                  }
+                  data-__meta={
+                    Object {
+                      "initialValue": undefined,
+                      "name": "detailId",
+                      "originalProps": Object {
+                        "children": undefined,
+                      },
+                      "ref": null,
+                      "rules": Array [
+                        Object {
+                          "message": "不能为空！",
+                          "required": undefined,
+                        },
+                      ],
+                      "trigger": "onChange",
+                      "validate": Array [
+                        Object {
+                          "rules": Array [
+                            Object {
+                              "message": "不能为空！",
+                              "required": undefined,
+                            },
+                          ],
+                          "trigger": Array [
+                            "onChange",
+                          ],
+                        },
+                      ],
+                      "valuePropName": "value",
+                    }
+                  }
+                  id="detailId"
+                  onChange={[Function]}
+                />
+                
+              </span>
+            </div>
+          </div>
         </div>
         <div
           className="ant-row ant-form-item  undefined"
