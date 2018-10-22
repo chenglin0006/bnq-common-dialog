@@ -152,7 +152,7 @@ var DialogForm = function (_Component) {
                     var datas = _this2.props.formData;
                     if (datas) {
                         datas.forEach(function (data) {
-                            if (data.type === 'checkbox') {
+                            if (data.type === 'checkbox' && !data.multiple) {
                                 var value = values[data.id];
                                 values[data.id] = value ? 1 : 0;
                             }

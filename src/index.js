@@ -40,7 +40,7 @@ export default class DialogForm extends Component {
                 let datas = this.props.formData;
                 if (datas) {
                     datas.forEach((data) => {
-                        if (data.type === 'checkbox') {
+                        if (data.type === 'checkbox'&&!data.multiple) {
                             let value = values[data.id];
                             values[data.id] = value ? 1 : 0;
                         }

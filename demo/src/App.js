@@ -28,6 +28,7 @@ class App extends Component {
               title: 'Child Node1',
               value: '0-0-1',
               key: '0-0-1',
+              selectable:false
           }, {
               title: 'Child Node2',
               value: '0-0-2',
