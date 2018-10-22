@@ -338,14 +338,15 @@ var DialogForm = function (_Component) {
         value: function render() {
             var _this3 = this;
 
+            //dialogContent为表格内容，titles&&values的结构
             var _props = this.props,
                 dialogButton = _props.dialogButton,
-                message = _props.message,
-                showInputSelect = _props.showInputSelect,
+                dialogContent = _props.dialogContent,
                 dialogWidth = _props.dialogWidth,
                 dialogHeight = _props.dialogHeight,
                 title = _props.title;
 
+            var columns = [];
             return _react2.default.createElement(
                 'div',
                 { className: 'dialog-mask bnq-common-dialog-container' },
@@ -372,6 +373,23 @@ var DialogForm = function (_Component) {
                                 onSubmit: this.props.actionButtons && this.props.actionButtons.length ? null : this._handelSubmit
                             },
                             this._getFields()
+                        ),
+                        dialogContent && _react2.default.createElement(
+                            'div',
+                            { className: 'dialog-content', style: { height: '80%', overflow: 'scroll' } },
+                            dialogContent.titles.map(function (item) {
+                                columns.push({ 'title': item.text, 'dataIndex': item.field });
+                            }),
+                            dialogContent.values.map(function (item, i) {
+                                item['key'] = i;
+                            }),
+                            _react2.default.createElement(_antd.Table, { dataSource: dialogContent.values,
+                                columns: columns,
+                                pagination: { pageSize: 10 },
+                                rowKey: function rowKey(item) {
+                                    return item.key;
+                                }
+                            })
                         ),
                         _react2.default.createElement(
                             'div',

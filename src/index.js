@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio,TreeSelect} from 'antd';
+import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio,TreeSelect,Table} from 'antd';
 import PropTypes from 'prop-types';
 import './index.less';
 import * as Util from "./util";
@@ -185,7 +185,9 @@ export default class DialogForm extends Component {
     }
 
     render() {
-        let {dialogButton,message,showInputSelect, dialogWidth, dialogHeight,title} = this.props;
+        //dialogContent为表格内容，titles&&values的结构
+        let {dialogButton,dialogContent, dialogWidth, dialogHeight,title} = this.props;
+        let columns = [];
         return (
             <div className="dialog-mask bnq-common-dialog-container">
                 <div className="dialog-container" style={{width: (dialogWidth||500)+'px', height: (dialogHeight||300)+'px'}}>
@@ -201,6 +203,22 @@ export default class DialogForm extends Component {
                             {/*此处动态生成表单域*/}
                             {this._getFields()}
                         </Form>
+                        {dialogContent &&
+                        <div className="dialog-content" style={{ height: '80%',overflow:'scroll'}}>
+                            {dialogContent.titles.map((item) => {
+                                columns.push({'title': item.text, 'dataIndex': item.field,})
+                            })}
+                            {/*前端手动加key*/}
+                            {dialogContent.values.map((item,i)=>{
+                                item['key']=i;
+                            })}
+                            <Table dataSource={dialogContent.values}
+                                   columns={columns}
+                                   pagination={{ pageSize: 10 }}
+                                   rowKey={(item) => item.key}
+                            />
+                        </div>
+                        }
                         <div className="dialog-button" style={{textAlign:'center'}}>
                             {dialogButton &&
                             dialogButton.map((item, i) => {

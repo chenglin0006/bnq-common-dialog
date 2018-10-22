@@ -130,7 +130,16 @@ class App extends Component {
                             showDialogStatus:false
                         })
                     }
-                }]
+                }],
+            dialogContent:{
+                titles:[
+                    {field: "msg", text: "结果", type: "text"},
+                    {field: "includeStr", text: "Inc/Exc", type: "text"}
+                ],
+                values:[
+                    {id: 1, includeStr: "exclude", skuCode: "9999990", skuName: null, code: 2, msg: "该活动商品类别只能为包含"}
+                ]
+            }
         }
     return (
       <div className="App">
