@@ -3,7 +3,7 @@ npm i bnq-common-dialog
 
 
 ## use 见demo
-支持：detail/radio/textarea/select/number/rangedatepicker/treeSelect
+支持：detail/radio/textarea/select/number/rangedatepicker/treeSelect/cascader/dialogContent为表格内容，titles&&values的结构
 DialogForm.propTypes = {
     title:'弹窗标题',
     formData:[{
@@ -49,7 +49,18 @@ DialogForm.propTypes = {
           placeholder:'请选择',
           initialValue:'0-0-2',
           multiple:true
-      }],
+      },{                           //cascader
+        id: 'cardTypeList',
+        name: '指定卡类型',
+        type:'cascader',
+        className:'block-div cascader-div',
+        placeholder:'请选择',
+        options:cascaderData,
+        changeOnSelect:false,//是否允许选中父级
+        onChange :(value, selectedOptions)=>{},
+        loadData:(selectedOptions)=>{}
+        expandTrigger:"click"  //click||hover
+    }],
     dialogWidth:500,
     dialogHeight:550,
     dialogButton:[{

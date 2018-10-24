@@ -39,6 +39,30 @@ class App extends Component {
           value: '0-1',
           key: '0-1',
       }];
+
+      const cascaderData = [{
+          value: 'zhejiang',
+          label: 'Zhejiang',
+          children: [{
+              value: 'hangzhou',
+              label: 'Hangzhou',
+              children: [{
+                  value: 'xihu',
+                  label: 'West Lake',
+              }],
+          }],
+      }, {
+          value: 'jiangsu',
+          label: 'Jiangsu',
+          children: [{
+              value: 'nanjing',
+              label: 'Nanjing',
+              children: [{
+                  value: 'zhonghuamen',
+                  label: 'Zhong Hua Men',
+              }],
+          }],
+      }];
         const props={
             title:'弹窗标题',
             formData:[
@@ -106,7 +130,19 @@ class App extends Component {
                     placeholder:'请选择',
                     initialValue:'0-0-2',
                     multiple:true
-            }
+            },
+            {
+                id: 'cardTypeList',
+                name: 'cascader',
+                type:'cascader',
+                className:'block-div cascader-div',
+                placeholder:'请选择',
+                options:cascaderData,
+                changeOnSelect:false,//是否允许选中父级
+                onChange :(value, selectedOptions)=>{},
+                loadData:(selectedOptions)=>{},
+                expandTrigger:'hover'
+            },
             ],
             dialogWidth:700,
             dialogHeight:550,

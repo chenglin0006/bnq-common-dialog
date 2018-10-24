@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio,TreeSelect,Table} from 'antd';
+import {Form, Input, Button, Select, DatePicker, InputNumber, Checkbox, Switch, Radio,TreeSelect,Table,Cascader} from 'antd';
 import PropTypes from 'prop-types';
 import './index.less';
 import * as Util from "./util";
@@ -137,6 +137,16 @@ export default class DialogForm extends Component {
                     multiple:multiple
                 }
                 return <TreeSelect {...props}></TreeSelect>
+                break;
+            case 'cascader' :
+                return <Cascader
+                    options={option.options}
+                    loadData={option.loadData}
+                    onChange={option.onChange}
+                    expandTrigger={option.expandTrigger||'click'}
+                    changeOnSelect={option.changeOnSelect}//是否允许选中父级
+                    placeholder={option.placeholder}
+                />
                 break;
             default:
                 return <Input disabled={option.disabled} maxLength={option.maxlength} placeholder={option.placeholder}

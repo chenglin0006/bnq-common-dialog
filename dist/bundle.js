@@ -287,6 +287,16 @@ var DialogForm = function (_Component) {
                     };
                     return _react2.default.createElement(_antd.TreeSelect, props);
                     break;
+                case 'cascader':
+                    return _react2.default.createElement(_antd.Cascader, {
+                        options: option.options,
+                        loadData: option.loadData,
+                        onChange: option.onChange,
+                        expandTrigger: option.expandTrigger || 'click',
+                        changeOnSelect: option.changeOnSelect //是否允许选中父级
+                        , placeholder: option.placeholder
+                    });
+                    break;
                 default:
                     return _react2.default.createElement(_antd.Input, { disabled: option.disabled, maxLength: option.maxlength, placeholder: option.placeholder,
                         type: option.type == 'password' ? 'password' : '' });
