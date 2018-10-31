@@ -289,6 +289,7 @@ var DialogForm = function (_Component) {
                     break;
                 case 'cascader':
                     return _react2.default.createElement(_antd.Cascader, {
+                        disabled: option.disabled,
                         options: option.options,
                         loadData: option.loadData,
                         onChange: option.onChange,

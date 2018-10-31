@@ -140,6 +140,7 @@ export default class DialogForm extends Component {
                 break;
             case 'cascader' :
                 return <Cascader
+                    disabled={option.disabled}
                     options={option.options}
                     loadData={option.loadData}
                     onChange={option.onChange}
