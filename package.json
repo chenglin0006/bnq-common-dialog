@@ -1,6 +1,6 @@
 {
   "name": "bnq-common-dialog",
-  "version": "0.0.17",
+  "version": "0.0.18",
   "description": "react component for bnq",
   "main": "dist/bundle.js",
   "files": [
